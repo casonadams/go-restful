@@ -6,23 +6,12 @@ import (
 	"github.com/casonadams/go-restful/internal/pkg/database"
 	"github.com/casonadams/go-restful/internal/pkg/middleware"
 	"github.com/casonadams/go-restful/internal/pkg/model"
-	"log"
-
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	loadEnv()
 	loadDatabase()
 	serveApplication()
-}
-
-func loadEnv() {
-	err := godotenv.Load(".env.local")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 }
 
 func loadDatabase() {

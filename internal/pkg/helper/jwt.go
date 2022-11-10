@@ -13,7 +13,7 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 )
 
-var privateKey = []byte(os.Getenv("JWT_PRIVATE_KEY"))
+var privateKey = []byte(os.Getenv("JWT_TOKEN"))
 
 func GenerateJWT(user model.User) (string, error) {
 	tokenTTL, _ := strconv.Atoi(os.Getenv("TOKEN_TTL"))

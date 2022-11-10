@@ -1,10 +1,14 @@
+export REPO_SLUG="go-restful"
+export DOCKER_IMAGE_NAME=$REPO_SLUG
+
 # Database credentials
-DB_HOST="<<DB_HOST>>"
-DB_USER="<<DB_USER>>"
-DB_PASSWORD="<<DB_PASSWORD>>"
-DB_NAME="diary_app"
-DB_PORT="<<DB_PORT>>"
+export DB_DATABASE=$REPO_SLUG
+export DB_HOST=0.0.0.0
+export DB_PASSWORD="secret"
+export DB_PORT=5432
+export DB_USERNAME=$REPO_SLUG
+export SERVER_PORT=3000
 
 # Authentication credentials
-TOKEN_TTL="2000"
-JWT_PRIVATE_KEY="THIS_IS_NOT_SO_SECRET+YOU_SHOULD_DEF1NITELY_CHANGE_1T"
+export TOKEN_TTL="2000"
+export JWT_SECRET="monkey-split-tails-and-keep-the-change"

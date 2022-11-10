@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  api:
+    image: "${DOCKER_IMAGE_NAME}-api:${DOCKER_IMAGE_TAG:-latest}"
+    container_name: "${REPO_SLUG}-api"
+    build:
+      context: .
+      dockerfile: build/package/Dockerfile
+    volumes:
+      - ".:/app"
+    working_dir: "/app"
+    ports:
+      - "${SERVER_PORT:-8000}:${SERVER_PORT:-8000}"
+    environment:
+      DOCKER_IMAGE_NAME: $DOCKER_IMAGE_NAME
+      SERVER_PORT: $SERVER_PORT
+      JWT_SECRET: $JWT_SECRET
+      DB_DATABASE: $REPO_SLUG
+      DB_USERNAME: $DB_USERNAME
+      DB_PASSWORD: $DB_PASSWORD
+      DB_HOST: "${REPO_SLUG}-postgres"
+      DB_PORT: $DB_PORT
+      DEBUG: ${DEBUG:-}
+    command:
+      go run cmd/go-restful/main.go # comment to do dev work
+      # sleep infinity # uncomment to do dev work
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: "${REPO_SLUG}-postgres"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: $DB_USERNAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+
+volumes:
+  postgres-data:
