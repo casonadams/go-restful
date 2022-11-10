@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/casonadams/go-restful/internal/helper"
-	"github.com/casonadams/go-restful/internal/model"
+	"github.com/casonadams/go-restful/internal/pkg/helper"
+	"github.com/casonadams/go-restful/internal/pkg/model"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

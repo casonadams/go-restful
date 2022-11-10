@@ -2,7 +2,7 @@ package model
 
 import (
 	"html"
-	"github.com/casonadams/go-restful/internal/database"
+	"github.com/casonadams/go-restful/internal/pkg/database"
 	"strings"
 
 	"golang.org/x/crypto/bcrypt"

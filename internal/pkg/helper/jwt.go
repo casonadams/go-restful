@@ -3,7 +3,7 @@ package helper
 import (
 	"errors"
 	"fmt"
-	"github.com/casonadams/go-restful/internal/model"
+	"github.com/casonadams/go-restful/internal/pkg/model"
 	"os"
 	"strconv"
 	"strings"

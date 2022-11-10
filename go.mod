@@ -1,4 +1,4 @@
-module go-restful
+module github.com/casonadams/go-restful
 
 go 1.19
 

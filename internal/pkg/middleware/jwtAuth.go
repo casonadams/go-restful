@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/casonadams/go-restful/internal/helper"
+	"github.com/casonadams/go-restful/internal/pkg/helper"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

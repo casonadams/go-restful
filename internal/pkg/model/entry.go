@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/casonadams/go-restful/internal/database"
+	"github.com/casonadams/go-restful/internal/pkg/database"
 
 	"gorm.io/gorm"
 )
